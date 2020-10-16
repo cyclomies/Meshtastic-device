@@ -18,7 +18,7 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 * L6 Presentation layer (encryption, encrypted data)
 * L7 Application layer (messages, plain data)
 
-Layers L1-L3 are called *media layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *host layers*, and they are responsible for accurate data delivery between users.
+Layers L1-L3 are called *media layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *host layers*, and they are responsible for accurate data delivery between end users.
 
 ## Layered operations
 
@@ -29,6 +29,53 @@ plain data (L7) -> encrypted data (L6) -> assigned encrypted data (L5) -> struct
 **HOW**
 
 entrying of plain text/data (L7) -> encrypting data (L6) -> determining transport layer (L5) -> structuring to segmants/datagrams (L4) -> logical routing of packets (L3) -> physical addressing of frames (L2) --> physical transmission (L1)
+
+### L1 Physical/Virtualized layer 
+
+Layer 1: Physical Layer (raw bits, managed by LoRa modems/simulated modems)
+
+* physical or virtualized transmitting and receiving of packets
+* physical error correction
+
+### L2 Data link layer
+
+Layer 2: Data Link Layer (mesh packet, the means for addressing pysical devices)
+
+* physical addressing (physical node numbers)
+
+### L4 Transport layer 
+
+Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing packets, packet retransmission, packet queuing, packet prioritization, packet transmission limitations, and for duty cycle management)
+
+* logical routing
+* logical addressing (user addressing/user numbering)
+* ACK, NACK
+* error detection
+* merging and dividing packets
+* packet retransmission
+* packet queuing
+* packet prioritization
+* packet transmission limitations
+* and for duty cycle management
+
+### L5 Session layer
+
+Layer 5: Session Layer (decision of transport layer: BLE, LoRa, WLAN..)
+
+### L6 Presentation layer
+
+L6 Presentation layer (encryption, encrypted data)
+
+* encryption
+* decryption
+
+### L7 Application layer
+
+L7 Application layer (messages, plain data)
+
+* user interface (UI) inputs and outputs
+
+
 
 
 
