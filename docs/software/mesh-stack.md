@@ -4,6 +4,31 @@
 
 The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used to describe the functions of Meshtastic mesh networking. 
 
+**Meshtastic mesh layers:**
+
+* L1 Physical/Virtualized layer (raw data, bits)
+* L2 Data link layer (frames)
+* L3 Networking layer (packets)
+* L4 Transport layer (datagram, segments)
+* L5 Session layer (interhost cummunication: determining transport layer, forwarded encrypted data)
+* L6 Presentation layer (encryption, encrypted data)
+* L7 Application layer (messages, plain data)
+
+**WHAT**
+
+plain data (L7) -> encrypted data (L6) -> assigned encrypted data (L5) -> structured segments/datagrams (L4) -> packets (L3) -> frames (L2) --> raw data (L1)
+
+**HOW**
+
+entrying of plain text/data (L7) -> encrypting data (L6) -> determining transport layer (L5) -> structuring to segmants/datagrams (L4) -> logical routing of packets (L3) -> physical addressing of frames (L2) --> physical transmission (L1)
+
+
+
+
+
+
+
+
 The OSI network stack consists of seven logical layers:
 
 Media layers:
@@ -24,23 +49,15 @@ TCP/IP
 * link (L2, packet, frame header & footer)
 * physical (L1, raw data, LoRa modem/virtual LoRa modem)
 
+
+
 raw data <- packet <- datagram <- message
 
-* L1 Physical/Virtualized layer (raw data, bits)
-* L2 Data link layer (packets, frames)
-* L3 Networking layer (datagram, packets)
-* L4 Transport layer (datagram, segments)
-* L5 Session layer (interhost cummunication: determining transport layer, forwarded encrypted data)
-* L6 Presentation layer (encryption, encrypted data)
-* L7 Application layer (messages, plain data)
 
-**WHAT**
 
-plain data (L7) -> encrypted data (L6) -> assigned encrypted data (L5) -> structured segments/datagrams (L4) -> packets (L3) -> frames (L2) --> raw data (L1)
 
-**HOW**
 
-entrying of plain text/data (L7) -> encrypting data (L6) -> determining transport layer (L5) -> structuring to segmants/datagrams (L4) -> logical routing of packets (L3) -> physical addressing of frames (L2) --> physical transmission (L1)
+
 
 plain data (L7) -> encrypted data (L6) -> transport layer determination (L5) -> transporting segments (L4) -> logical routing of packets (L3) -> physical frame adressing (L2) --> physical transmission (L1)
 
