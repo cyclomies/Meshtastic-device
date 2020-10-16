@@ -52,17 +52,17 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 * L2: *frames* --> 
 * L1 *raw data bits*
 
-### L1 Physical/Virtualized layer 
+### L1 Physical/Virtualized layer (raw data bits)
 
-Layer 1 is the physical layer, implying for the *Networking Medium* (later *medium*). It is usually refered as a networking device or as a *Networkin Interface*. The medium can also be engineered as a virtualized interface, used in virtualized testing environments.
+Layer 1 is the physical layer, implying for the *Networkin Interface* (later *interface*). The interface can also be engineered as a virtualized interface, used in virtualized testing environments. The interface transports transmissions trough different mediums (wired, wireless, and virtualized).
 
 Main functions of L1:
 
-* executes physical or virtualized transmissions
+* executes physical or virtualized transmissions trough mediums
 * handles transmitting and receiving of raw data bits by physical modulation and encoding of radio waves, or virtualized
 * transform the structure between raw data bits (L1) and frames (L2)
 
-Currently, Meshtastic can control folowing mediums for networking:
+Currently, Meshtastic can control folowing interfaces for networking:
 
 * LoRa transceivers
 * Bluetooth LE
@@ -74,14 +74,14 @@ Currently, Meshtastic can control folowing mediums for networking:
 Parameters for LoRa transceivers on Meshtastic mesh:
 * 32 bit LORA preamble (to allow receiving radios to synchronize clocks and start framing). We use a longer than minimum (8 bit) preamble to maximize the amount of time the LORA receivers can stay asleep, which dramatically lowers power consumption.
 
-### L2 Data link layer
+### L2 Data link layer (frames)
 
-Layer 2, data link layer, is responsible for controling addressing of the physical mediums. Every medium has to be assigned with a unique address. Currently, Meshtastic uses 4 byte (32bit) NodeID adressing. NodeIds are constructed from the bottom four bytes of the macaddr of the bluetooth address. Because the OUI is assigned by the IEEE and we currently only support a few CPU manufacturers, the upper byte is defacto guaranteed unique for each vendor. The bottom 3 bytes are guaranteed unique by that vendor.
+Layer 2, data link layer, is responsible for controling addressing of the interfaces. Every interface has to be assigned with a unique address. Currently, Meshtastic uses 4 byte (32bit) NodeID adressing. NodeID's are constructed from the bottom four bytes of the macaddr of the bluetooth address. Because the OUI is assigned by the IEEE and we currently only support a few CPU manufacturers, the upper byte is defacto guaranteed unique for each vendor. The bottom 3 bytes are guaranteed unique by that vendor.
 
 Main functions of L2:
-* control addressing of physical mediums
-* naive collision avoidance
-* naive error correction (under developement) 
+* control addressing of physical interfaces
+* execute collision avoidance
+* execute error correction (under developement) 
 * transform the structure between frames (L2) and packets (L3)
 
 Parameters for data link layer:
@@ -91,14 +91,28 @@ Parameters for data link layer:
 
 ### L3 Networking layer (packets)
 
+Layer 3, networking layer, does route packets according to logical addressing, and a pre-defined routing logic. Routing allow transmissions between different physical, and virtualized, network structures: between devices wich can't reach to each other directly (within L1 and L2).
+
 Layer 3: Network Layer (mesh datagram, the protocol for logical routing (routing tables) and addressing (user addresses))
 Host layers:
 
-* logical routing
-* logical addressing (user addressing/user numbering)
-* routing tables
+Main functions of L3:
 
-### L4 Transport layer 
+* routing packets between logical connections
+* using logical addressing (user addressing/user numbering)
+* building and maintaining routing tables
+* transform the structure between packets (L3) and datagrams (L4)
+
+Meshtastic can route packets trough folowing networks:
+
+* LoRa <-> LoRa
+* LoRa <-> Bluetooth LE (between a node and one Android App / Python client)
+* LoRa <-> Serial over USB OTG (between a node and one Android App / Python client)
+* LoRa <-> WLAN client (under developement)
+* LoRa <-> WLAN AP (under developement)
+* Bluetooth <-> Bluetooth (under developement)
+
+### L4 Transport layer (datagrams)
 
 Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing datagrams, datagram retransmission, datagram queuing, datagram prioritization, datagram transmission limitations, and for duty cycle management)
 
@@ -111,18 +125,18 @@ Layer 4: Transport Layer (mesh datagram structuring, includes logical functions 
 * datagram transmission limitations
 * and for duty cycle management
 
-### L5 Session layer
+### L5 Session layer (datapackages)
 
 Layer 5: Session Layer (decision of transport layer: BLE, LoRa, WLAN..)
 
-### L6 Presentation layer
+### L6 Presentation layer (encrypted data)
 
 L6 Presentation layer (encryption, encrypted data)
 
 * encryption
 * decryption
 
-### L7 Application layer
+### L7 Application layer (data)
 
 L7 Application layer (messages, plain data)
 
