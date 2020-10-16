@@ -28,7 +28,7 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 **Acknowledgements**
 * **Explicit ACK** Sending a ACK message back to the orginal sender, from the intended recipient, whenever a ACK is required
 * **Implicit ACK** A node considers a packet is received by the intended node, if the sender node overhears the packet is retransmitted by the intended node
-* **NACK** Negative-acknowledgement (NAK or NACK) indicates the transfer was failed.
+* **NACK** Negative-acknowledgement (NAK or NACK) indicates a failed transfer.
 
 **To simplify the practice:**
 
