@@ -12,7 +12,7 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). 
 
-* L1 Physical/Virtualized layer [raw data bits]
+* L1 Physical/Virtualized layer (raw data bits)
 * L2 Data link layer (frames)
 * L3 Networking layer (packets)
 * L4 Transport layer (segmented datagrams)
@@ -20,15 +20,15 @@ Utilizing the OSI model, the Meshtastic mesh operations are divided to seven dif
 * L6 Presentation layer (encryption of data)
 * L7 Application layer (plain messages and data)
 
-Layers L1-L3 are called *media layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *host layers*, and they are responsible for accurate data delivery between end users.
+Layers L1-L3 are called *Media Layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *Host Layers*, and they are responsible for accurate data delivery between end users.
 
 ## The footprint of resources regarding the layers
 
 **Repeating**
-A networking device, set to retransmit transmissions (i. e. *Repeater Mode*), does only need Media layers (L1-L3), to be able to *repeat packets*. This applies only, if the packet is repeated within the same physical layer (i. e. LoRa --> LoRa). Therefore the resource footprint, for repeater only devices, can be held tiny.
+A networking device, set to retransmit transmissions (i. e. *Repeater Mode*), does only need media layers (L1-L3), to be able to *Repeat* packets. This applies only, if the packet is repeated within the same physical layer (i. e. LoRa --> LoRa). Therefore the resource footprint, for repeater only devices, can be held tiny.
 
 **Routing**
-When the forwarding process do need the a physical layer to be changed from one type to another (i. e. LoRa --> TCP/IP), then the networking device do also need layers four and five (L4-L5), to be able to accomplish the forwarding task. This type of a task, is called *routing*. This is due to a) the need for refactoring the datagram for a different media layer (L4), and b) for eshtablishing internal connection between the different media layers (L5).
+When the forwarding process do need the a physical layer to be changed from one type to another (i. e. LoRa --> TCP/IP), then the networking device do also need layers four and five (L4-L5), to be able to accomplish the forwarding task. This type of a task, is called *Routing*. Layers L4 and L4 are needed due to a) the need for refactoring the datagram for a different media layer (L4), and b) for eshtablishing internal connection between the different media layers (L5).
 
 **Interacting**
 A device requires all seven layers (L1-L7), to be able to show a message on the screen. Decryption (L6), and user interface (L7) do need resources, and therefore the footprint of the software is greater, than with the two excamples above.
