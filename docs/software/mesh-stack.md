@@ -8,6 +8,34 @@ The protocol stack (https://en.wikipedia.org/wiki/Protocol_stack) is used to eas
 
 The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe the functions of Meshtastic mesh networking. 
 
+## Terminology - FIXME
+
+To avoid some inconsistency, concerning the usage of terms like flooding, routing, unicast, multicast, and broadcasting, the terms are defined beneath:
+
+**Addressing**
+
+* **Unicast** From one source to one destination i.e. One-to-One messaging (to one specified address)
+* **Broadcast** From one source to all possible destinations i.e. One-to-All (to a broadcast address)
+* **Multicast** From one source to multiple specific destinations i.e. One-to-Many (to several specified addresses)
+
+*“The original multicast design i.e. RFC 1112, supports both the ASM (any-source-multicast) based on many-to-many service model and the SSM (source specific multicast) based on a one-to-many model.”*
+
+**Networking**
+
+* **Flooding** In flooding, the node sends the packet to all nodes, because it doesn’t know how to reach the defined (unicast or multicast, or it might be a broadcast address) destination.
+* **Routing** In routing, the node sends the packet only to a specific node, according to the routing table, to be retransmitted (unicast or multicast, or it might be a specific broadcast address), for avoiding overusing airtime
+
+**Acknowledgements**
+* **Explicit ACK** Sending a ACK message back to the orginal sender, from the intended recipient, whenever a ACK is required
+* **Implicit ACK** A node considers a packet is received by the intended node, if the sender node overhears the packet is retransmitted by the intended node
+
+**To simplify:**
+
+* Addressing: Unicast if one-to-one, Multicast if one-to-many, and Broadcast if one-to-all
+* Routing: Flood if no routes or unknown recipient, or if a broadcast (re-broadcasting); do routing (distributed algorithm) according to route tables only, if the node knows the route to the destination
+* ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required)
+
+
 ## The layers of Meshtastic mesh network
 
 Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). These layers should be held separated within the codebase, to be able to modify/update functions on one layer, without bricking functions of the other layers.
@@ -112,7 +140,7 @@ Meshtastic can route packets trough folowing networks:
 * LoRa <-> WLAN AP (under developement)
 * Bluetooth <-> Bluetooth (under developement)
 
-### L4 Transport layer (datagrams)
+### L4 Transport layer (datagrams) - FIXME
 
 Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing datagrams, datagram retransmission, datagram queuing, datagram prioritization, datagram transmission limitations, and for duty cycle management)
 
@@ -125,7 +153,7 @@ Layer 4: Transport Layer (mesh datagram structuring, includes logical functions 
 * datagram transmission limitations
 * and for duty cycle management
 
-### L5 Session layer (datapackages)
+### L5 Session layer (datapackages) - FIXME
 
 Layer 5: Session Layer (decision of transport layer: BLE, LoRa, WLAN..)
 
@@ -139,7 +167,7 @@ Main functions of L6:
 * data pricessing (i. e. Protocol Buffers)
 * transform the structure between encrypted data (L6) and data (L7)
 
-### L7 Application layer (data)
+### L7 Application layer (data) - FIXME
 
 L7 Application layer (messages, plain data)
 
