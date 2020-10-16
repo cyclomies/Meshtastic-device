@@ -1,4 +1,4 @@
-# Meshtastic mesh protocol stack
+# Meshtastic mesh protocol stack (version: pre-alpha)
 
 ## Protocol stack explained
 
@@ -34,22 +34,22 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 
 **Function**
 
-* L7: allowing entry of plain text/data -> 
-* L6: encrypting data -> 
-* L5: determining transport layer -> 
-* L4: structuring encrypted data to segmanted datagrams -> 
-* L3: determining logical routing of packets -> 
-* L2: physical addressing of transporting frames --> 
+* L7: allowing entry of plain text/data <-> 
+* L6: encrypting data <-> 
+* L5: determining transport layer <-> 
+* L4: structuring encrypted data to segmanted datagrams <-> 
+* L3: determining logical routing of packets <-> 
+* L2: physical addressing of transporting frames <-> 
 * L1: physical transmission
 
 **Outcome**
 
-* L7: plain text/*data* -> 
-* L6: *encrypted data* -> 
-* L5: assigned encrypted *datapackages* -> 
-* L4: structured and segmented *datagrams* -> 
-* L3: *packets* -> 
-* L2: *frames* --> 
+* L7: plain text/*data* <-> 
+* L6: *encrypted data* <-> 
+* L5: assigned encrypted *datapackages* <-> 
+* L4: structured and segmented *datagrams* <-> 
+* L3: *packets* <-> 
+* L2: *frames* <-> 
 * L1 *raw data bits*
 
 ### L1 Physical/Virtualized layer (raw data bits)
@@ -131,10 +131,13 @@ Layer 5: Session Layer (decision of transport layer: BLE, LoRa, WLAN..)
 
 ### L6 Presentation layer (encrypted data)
 
-L6 Presentation layer (encryption, encrypted data)
+Layer 6 is the presentation layer. In Meshtastic, the layer is utilized for data processing (i. e. protobuf encoding) and for encrypt and decrypt plain data. 
 
-* encryption
-* decryption
+Main functions of L6:
+
+* encryption and decryption of data
+* data pricessing (i. e. Protocol Buffers)
+* transform the structure between encrypted data (L6) and data (L7)
 
 ### L7 Application layer (data)
 
