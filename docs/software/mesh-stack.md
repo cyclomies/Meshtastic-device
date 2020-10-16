@@ -10,13 +10,13 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 ## The layers of Meshtastic mesh network
 
-* L1 Physical/Virtualized layer (raw data, bits)
+* L1 Physical/Virtualized layer (raw data bits)
 * L2 Data link layer (frames)
 * L3 Networking layer (packets)
-* L4 Transport layer (datagram, segments)
-* L5 Session layer (interhost cummunication: determining transport layer, forwarded encrypted data)
-* L6 Presentation layer (encryption, encrypted data)
-* L7 Application layer (messages, plain data)
+* L4 Transport layer (segmented datagrams)
+* L5 Session layer (interhost cummunication: determining of transport layer, forwarded encrypted data)
+* L6 Presentation layer (encryption of data)
+* L7 Application layer (plain messages and data)
 
 Layers L1-L3 are called *media layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *host layers*, and they are responsible for accurate data delivery between end users.
 
