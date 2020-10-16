@@ -20,9 +20,9 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 Layers L1-L3 are called *media layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *host layers*, and they are responsible for accurate data delivery between end users.
 
-A Meshtastic node, set to *Repeater Mode*, does need only Media layers (L1-L3) to be able to route Meshtastic mesh packets. This applies only, if the packet is routed within the same physical layer (i. e. LoRa --> LoRa). 
+A Meshtastic node, set to *Repeater Mode*, does need only Media layers (L1-L3) to be able to route Meshtastic mesh packets. This applies only, if the packet is routed within the same physical layer (i. e. LoRa --> LoRa). Therefore the software footprint, for repeater nodes only, can be held tiny.
 
-When the routing process do need the a physical layer to be changed from one type to another (i. e. LoRa --> TCP/IP), then the Meshtastic node needs also layers four and five (L4-L5), to be able to accomplish the routing task. This is due to a) the need for refactoring the datagram for a different media layer, and b) for eshtablishing connection between the different media layers.
+When the routing process do need the a physical layer to be changed from one type to another (i. e. LoRa --> TCP/IP), then the Meshtastic node needs also layers four and five (L4-L5), to be able to accomplish the routing task. This is due to a) the need for refactoring the datagram for a different media layer (L4), and b) for eshtablishing internal connection between the different media layers (L5).
 
 ## Layered operations
 
@@ -48,19 +48,26 @@ Layer 2: Data Link Layer (mesh packet, the means for addressing pysical devices)
 
 * physical addressing (physical node numbers)
 
-### L4 Transport layer 
+### L3 Networking layer (packets)
 
-Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing packets, packet retransmission, packet queuing, packet prioritization, packet transmission limitations, and for duty cycle management)
+Layer 3: Network Layer (mesh datagram, the protocol for logical routing (routing tables) and addressing (user addresses))
+Host layers:
 
 * logical routing
 * logical addressing (user addressing/user numbering)
-* ACK, NACK
+* routing tables
+
+### L4 Transport layer 
+
+Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing datagrams, datagram retransmission, datagram queuing, datagram prioritization, datagram transmission limitations, and for duty cycle management)
+
+* ACK and NACK features
 * error detection
 * merging and dividing packets
-* packet retransmission
-* packet queuing
-* packet prioritization
-* packet transmission limitations
+* datagram retransmission
+* datagram queuing
+* datagram prioritization
+* datagram transmission limitations
 * and for duty cycle management
 
 ### L5 Session layer
