@@ -34,35 +34,54 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 
 **Function**
 
-L7: allowing entry of plain text/data -> 
-L6: encrypting data -> 
-L5: determining transport layer -> 
-L4: structuring encrypted data to segmants/datagrams -> 
-L3: determining logical routing of packets -> 
-L2: physical addressing of frames --> 
-L1: physical transmission
+* L7: allowing entry of plain text/data -> 
+* L6: encrypting data -> 
+* L5: determining transport layer -> 
+* L4: structuring encrypted data to segmanted datagrams -> 
+* L3: determining logical routing of packets -> 
+* L2: physical addressing of transporting frames --> 
+* L1: physical transmission
 
 **Outcome**
 
-plain data (L7) -> 
-encrypted data (L6) -> 
-assigned encrypted data (L5) -> 
-structured segments/datagrams (L4) -> 
-packets (L3) -> 
-frames (L2) --> 
-raw data (L1)
+* L7: plain text/*data* -> 
+* L6: *encrypted data* -> 
+* L5: assigned encrypted *datapackages* -> 
+* L4: structured and segmented *datagrams* -> 
+* L3: *packets* -> 
+* L2: *frames* --> 
+* L1 *raw data bits*
 
 ### L1 Physical/Virtualized layer 
 
-Layer 1: Physical Layer (raw bits, managed by LoRa modems/simulated modems)
+Layer 1 is the physical layer, implying for the *Networking Medium* (later *medium*). It is usually refered as a networking device or as a *Networkin Interface*. The medium can also be engineered as a virtualized interface, used in virtualized testing environments.
 
-* physical or virtualized transmitting and receiving of packets
-* physical error correction
-* *Network medium* or *Medium*
+Main functions:
+
+* physical or virtualized transmitting and receiving of raw data bits
+* exccutes physical or virtualized transmissions between devices
+
+Currently, Meshtastic can control folowing mediums for networking:
+
+* LoRa transceivers
+* Bluetooth LE
+* WLAN (client and software access point)
+* Serial over USB OTG
+* ANT and ANT+ (under development)
+* virtualized LoRa transceiver
+
+Parameters for LoRa transceivers on Meshtastic mesh:
+* 32 bit LORA preamble (to allow receiving radios to synchronize clocks and start framing). We use a longer than minimum (8 bit) preamble to maximize the amount of time the LORA receivers can stay asleep, which dramatically lowers power consumption.
+* To prevent collisions, all transmitters will listen before attempting to send. If they hear some other node transmitting, they will reattempt transmission in x milliseconds. This retransmission delay is random between FIXME and FIXME (these two numbers are currently hardwired, but really should be scaled based on expected packet transmission time at current channel settings).
 
 ### L2 Data link layer
 
-Layer 2: Data Link Layer (mesh packet, the means for addressing pysical devices)
+Layer 2, data link layer, is responsible for controling physical addressing of the mediums. Every medium has to be assigned with a unique address. Currently, Meshtastic uses 4 byte (32bit) NodeID adressing. 
+
+
+NodeID of 0xffffffff (NodeNum_BROADCAST) is used for broadcasting.
+
+: Data Link Layer (mesh packet, the means for addressing pysical devices)
 
 * physical addressing (physical node numbers)
 
