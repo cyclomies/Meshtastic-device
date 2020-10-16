@@ -28,12 +28,13 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 **Acknowledgements**
 * **Explicit ACK** Sending a ACK message back to the orginal sender, from the intended recipient, whenever a ACK is required
 * **Implicit ACK** A node considers a packet is received by the intended node, if the sender node overhears the packet is retransmitted by the intended node
+* **NACK** Negative-acknowledgement (NAK or NACK) indicates the transfer was failed.
 
-**To simplify:**
+**To simplify the practice:**
 
 * Addressing: Unicast if one-to-one, Multicast if one-to-many, and Broadcast if one-to-all
 * Routing: Flood if no routes or unknown recipient, or if a broadcast (re-broadcasting); do routing (distributed algorithm) according to route tables only, if the node knows the route to the destination
-* ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required)
+* ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required). ACK's should always be registered, and clearly presented, individually for every intended recipient. ACK's loose their credibility, if the user can not be sure of acknowledgements.
 
 
 ## The layers of Meshtastic mesh network
