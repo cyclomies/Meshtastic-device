@@ -10,7 +10,7 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 ## The layers of Meshtastic mesh network
 
-Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). These layers should be held separated within the codebase, to be able to modify/update one layer, without bricking functions of other layers.
+Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). These layers should be held separated within the codebase, to be able to modify/update functions on one layer, without bricking functions of the other layers.
 
 * L1 Physical/Virtualized layer (raw data bits)
 * L2 Data link layer (frames)
@@ -32,13 +32,25 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 
 ## Functions of the layers
 
-**WHAT**
+**Function**
 
-plain data (L7) -> encrypted data (L6) -> assigned encrypted data (L5) -> structured segments/datagrams (L4) -> packets (L3) -> frames (L2) --> raw data (L1)
+L7: allowing entry of plain text/data -> 
+L6: encrypting data -> 
+L5: determining transport layer -> 
+L4: structuring encrypted data to segmants/datagrams -> 
+L3: determining logical routing of packets -> 
+L2: physical addressing of frames --> 
+L1: physical transmission
 
-**HOW**
+**Outcome**
 
-entrying of plain text/data (L7) -> encrypting data (L6) -> determining transport layer (L5) -> structuring to segmants/datagrams (L4) -> logical routing of packets (L3) -> physical addressing of frames (L2) --> physical transmission (L1)
+plain data (L7) -> 
+encrypted data (L6) -> 
+assigned encrypted data (L5) -> 
+structured segments/datagrams (L4) -> 
+packets (L3) -> 
+frames (L2) --> 
+raw data (L1)
 
 ### L1 Physical/Virtualized layer 
 
