@@ -17,11 +17,11 @@ Host layers:
 
 
 
-application (L5-L7, message)
-transport (L4, datagram, host-to-host, physical adressing)
-network (L3, packet, logical adressing), 
-link (L2, raw data)
-physical (L1, raw data)
+* application (L5-L7, message)
+* transport (L4, datagram, host-to-host, physical adressing)
+* network (L3, packet, logical adressing), 
+* link (L2, raw data)
+* physical (L1, raw data)
 
 raw data <- packet <- datagram <- message
 
