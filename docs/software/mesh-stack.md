@@ -35,9 +35,11 @@ raw data <- packet <- datagram <- message
 * L7 Application layer (messages, plain data)
 
 WHAT
+
 plain data (L7) -> encrypted data (L6) -> assigned encrypted data (L5) -> structured segments/datagrams (L4) -> packets (L3) -> frames (L2) --> raw data (L1)
 
 HOW
+
 entrying of plain text/data (L7) -> encrypting data (L6) -> determining transport layer (L5) -> structuring to segmants/datagrams (L4) -> logical routing of packets (L3) -> physical addressing of frames (L2) --> physical transmission (L1)
 
 plain data (L7) -> encrypted data (L6) -> transport layer determination (L5) -> transporting segments (L4) -> logical routing of packets (L3) -> physical frame adressing (L2) --> physical transmission (L1)
