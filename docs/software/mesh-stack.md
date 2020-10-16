@@ -56,10 +56,11 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 
 Layer 1 is the physical layer, implying for the *Networking Medium* (later *medium*). It is usually refered as a networking device or as a *Networkin Interface*. The medium can also be engineered as a virtualized interface, used in virtualized testing environments.
 
-Main functions:
+Main functions of L1:
 
-* physical or virtualized transmitting and receiving of raw data bits
-* exccutes physical or virtualized transmissions between devices
+* executes physical or virtualized transmissions
+* handles transmitting and receiving of raw data bits by physical modulation and encoding of radio waves, or virtualized
+* transform the structure between raw data bits (L1) and frames (L2)
 
 Currently, Meshtastic can control folowing mediums for networking:
 
@@ -72,18 +73,21 @@ Currently, Meshtastic can control folowing mediums for networking:
 
 Parameters for LoRa transceivers on Meshtastic mesh:
 * 32 bit LORA preamble (to allow receiving radios to synchronize clocks and start framing). We use a longer than minimum (8 bit) preamble to maximize the amount of time the LORA receivers can stay asleep, which dramatically lowers power consumption.
-* To prevent collisions, all transmitters will listen before attempting to send. If they hear some other node transmitting, they will reattempt transmission in x milliseconds. This retransmission delay is random between FIXME and FIXME (these two numbers are currently hardwired, but really should be scaled based on expected packet transmission time at current channel settings).
 
 ### L2 Data link layer
 
-Layer 2, data link layer, is responsible for controling physical addressing of the mediums. Every medium has to be assigned with a unique address. Currently, Meshtastic uses 4 byte (32bit) NodeID adressing. 
+Layer 2, data link layer, is responsible for controling addressing of the physical mediums. Every medium has to be assigned with a unique address. Currently, Meshtastic uses 4 byte (32bit) NodeID adressing. NodeIds are constructed from the bottom four bytes of the macaddr of the bluetooth address. Because the OUI is assigned by the IEEE and we currently only support a few CPU manufacturers, the upper byte is defacto guaranteed unique for each vendor. The bottom 3 bytes are guaranteed unique by that vendor.
 
+Main functions of L2:
+* control addressing of physical mediums
+* naive collision avoidance
+* naive error correction (under developement) 
+* transform the structure between frames (L2) and packets (L3)
 
-NodeID of 0xffffffff (NodeNum_BROADCAST) is used for broadcasting.
-
-: Data Link Layer (mesh packet, the means for addressing pysical devices)
-
-* physical addressing (physical node numbers)
+Parameters for data link layer:
+* 4 byte (32bit) addresses (bottom four bytes of the macaddr)
+* NodeID of 0xffffffff (NodeNum_BROADCAST) is used for broadcasting.
+* To prevent collisions, all transmitters will listen before attempting to send. If they hear some other node transmitting, they will reattempt transmission in x milliseconds. This retransmission delay is random between FIXME and FIXME (these two numbers are currently hardwired, but really should be scaled based on expected packet transmission time at current channel settings).
 
 ### L3 Networking layer (packets)
 
