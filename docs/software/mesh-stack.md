@@ -8,7 +8,7 @@ The protocol stack (https://en.wikipedia.org/wiki/Protocol_stack)is used to siml
 
 The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe the functions of Meshtastic mesh networking. 
 
-## Meshtastic mesh layers
+## The layers of Meshtastic mesh network
 
 * L1 Physical/Virtualized layer (raw data, bits)
 * L2 Data link layer (frames)
