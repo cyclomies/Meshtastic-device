@@ -10,7 +10,7 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 ## The layers of Meshtastic mesh network
 
-Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). 
+Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). These layers should be held separated within the codebase, to be able to modify/update one layer, without bricking functions of other layers.
 
 * L1 Physical/Virtualized layer (raw data bits)
 * L2 Data link layer (frames)
@@ -30,7 +30,7 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 
 **Interacting:** A device requires all seven layers (L1-L7), to be able to show a message on the screen. Decryption (L6), and user interface (L7) do need resources, and therefore the footprint of the software is greater, than with the two excamples above.
 
-## Layered operations
+## Functions of the layers
 
 **WHAT**
 
