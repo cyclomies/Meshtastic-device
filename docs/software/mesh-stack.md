@@ -2,7 +2,7 @@
 
 ## Protocol stack explained
 
-The protocol stack (https://en.wikipedia.org/wiki/Protocol_stack)is used to simlify the protocol design, and purpose of the protocols.
+The protocol stack (https://en.wikipedia.org/wiki/Protocol_stack) is used to ease the designing of protocol designing, and to simplify the functions of the protocols.
 
 ## OSI model explained
 
@@ -10,7 +10,9 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 ## The layers of Meshtastic mesh network
 
-* L1 Physical/Virtualized layer (raw data bits)
+Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). 
+
+* L1 Physical/Virtualized layer [raw data bits]
 * L2 Data link layer (frames)
 * L3 Networking layer (packets)
 * L4 Transport layer (segmented datagrams)
