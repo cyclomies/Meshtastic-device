@@ -24,14 +24,11 @@ Layers L1-L3 are called *Media Layers*, and they are responsible of transfering 
 
 ## The footprint of resources regarding the layers
 
-**Repeating**
-A networking device, set to retransmit transmissions (i. e. *Repeater Mode*), does only need media layers (L1-L3), to be able to *Repeat* packets. This applies only, if the packet is repeated within the same physical layer (i. e. LoRa --> LoRa). Therefore the resource footprint, for repeater only devices, can be held tiny.
+**Repeating:** A networking device, set to retransmit transmissions (i. e. *Repeater Mode*), does only need media layers (L1-L3), to be able to *Repeat* packets. This applies only, if the packet is repeated within the same physical layer (i. e. LoRa --> LoRa). Therefore the resource footprint, for repeater only devices, can be held tiny.
 
-**Routing**
-When the forwarding process do need the a physical layer to be changed from one type to another (i. e. LoRa --> TCP/IP), then the networking device do also need layers four and five (L4-L5), to be able to accomplish the forwarding task. This type of a task, is called *Routing*. Layers L4 and L4 are needed due to a) the need for refactoring the datagram for a different media layer (L4), and b) for eshtablishing internal connection between the different media layers (L5).
+**Routing:** When the forwarding process do need the a physical layer to be changed from one type to another (i. e. LoRa --> TCP/IP), then the networking device do also need layers four and five (L4-L5), to be able to accomplish the forwarding task. This type of a task, is called *Routing*. Layers L4 and L4 are needed due to a) the need for refactoring the datagram for a different media layer (L4), and b) for eshtablishing internal connection between the different media layers (L5).
 
-**Interacting**
-A device requires all seven layers (L1-L7), to be able to show a message on the screen. Decryption (L6), and user interface (L7) do need resources, and therefore the footprint of the software is greater, than with the two excamples above.
+**Interacting:** A device requires all seven layers (L1-L7), to be able to show a message on the screen. Decryption (L6), and user interface (L7) do need resources, and therefore the footprint of the software is greater, than with the two excamples above.
 
 ## Layered operations
 
