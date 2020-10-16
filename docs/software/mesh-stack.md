@@ -1,8 +1,12 @@
-# Meshtastic mesh network stack
+# Meshtastic mesh protocol stack
+
+## Protocol stack explained
+
+The protocol stack (https://en.wikipedia.org/wiki/Protocol_stack)is used to simlify the protocol design, and purpose of the protocols.
 
 ## OSI model explained
 
-The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used to describe the functions of Meshtastic mesh networking. 
+The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe the functions of Meshtastic mesh networking. 
 
 ## Meshtastic mesh layers
 
