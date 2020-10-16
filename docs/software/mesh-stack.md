@@ -20,6 +20,8 @@ The OSI model (https://en.wikipedia.org/wiki/OSI_model) is used here to describe
 
 Layers L1-L3 are called *media layers*, and they are responsible of transfering the data to the intended destination. Layers L4-L7 are called *host layers*, and they are responsible for accurate data delivery between end users.
 
+A Meshtastic node, set to *Repeater Mode*, does need only Media layers (L1-L3) to be able to route Meshtastic mesh packets. This applies only, if the packet is routed within the same physical layer. When the routing process do need the a physical layer to be changed from one type to another, then the Meshtastic node needs also layers four and five (L4-L5), to be able to accomplish the routing task.
+
 ## Layered operations
 
 **WHAT**
@@ -36,6 +38,7 @@ Layer 1: Physical Layer (raw bits, managed by LoRa modems/simulated modems)
 
 * physical or virtualized transmitting and receiving of packets
 * physical error correction
+* *Network medium* or *Medium*
 
 ### L2 Data link layer
 
