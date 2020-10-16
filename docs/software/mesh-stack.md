@@ -12,7 +12,7 @@ Media layers:
 * Layer 3: Network Layer (mesh datagram, the protocol for logical routing (routing tables) and addressing (user addresses))
 Host layers:
 * Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing packets, packet retransmission, packet queuing, packet prioritization, packet transmission limitations, and for duty cycle management)
-* Layer 5: Session Layer 
+* Layer 5: Session Layer (decision of transport layer: BLE, LoRa, WLAN..)
 * Layer 6: Presentation Layer
 * Layer 7: Application Layer (http, app)
 
@@ -30,8 +30,17 @@ raw data <- packet <- datagram <- message
 * L2 Data link layer (packets, frames)
 * L3 Networking layer (datagram, packets)
 * L4 Transport layer (datagram, segments)
-* L5 Application layer (messages, data)
+* L5 Session layer (interhost cummunication: determining transport layer, forwarded encrypted data)
+* L6 Presentation layer (encryption, encrypted data)
+* L7 Application layer (messages, plain data)
 
+WHAT
+plain data (L7) -> encrypted data (L6) -> assigned encrypted data (L5) -> structured segments/datagrams (L4) -> packets (L3) -> frames (L2) --> raw data (L1)
+
+HOW
+entrying of plain text/data (L7) -> encrypting data (L6) -> determining transport layer (L5) -> structuring to segmants/datagrams (L4) -> logical routing of packets (L3) -> physical addressing of frames (L2) --> physical transmission (L1)
+
+plain data (L7) -> encrypted data (L6) -> transport layer determination (L5) -> transporting segments (L4) -> logical routing of packets (L3) -> physical frame adressing (L2) --> physical transmission (L1)
 
 
 ## Current algorithm
