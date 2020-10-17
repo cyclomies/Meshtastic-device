@@ -1,5 +1,10 @@
 # Meshtastic mesh protocol stack (version: pre-alpha)
 
+**TODO** 
+* Merge available information of current status
+* Merge notes for future development
+* Fix FIXME
+
 ## Protocol stack explained
 
 The protocol stack (https://en.wikipedia.org/wiki/Protocol_stack) is used to ease the designing of protocol designing, and to simplify the functions of the protocols.
