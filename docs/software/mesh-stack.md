@@ -136,6 +136,8 @@ Main functions of L1:
 
 * executes physical or virtualized transmissions trough mediums
 * handles transmitting and receiving of raw data bits by physical modulation and encoding of radio waves, or virtualized
+* manage channel hopping to increase security (under development)
+* manage channel blacklisting to increase reliability (under development)
 * transform the structure between raw data bits (L1) and frames (L2)
 
 Currently, Meshtastic can control folowing interfaces for networking:
