@@ -223,7 +223,7 @@ Layer 4: Transport Layer (mesh datagram structuring, includes logical functions 
 
 * ACK and NACK features
 * error detection
-* merging and dividing packets
+* merging and dividing datapackages to and from datagrams
 * datagram retransmission
 * datagram queuing
 * datagram prioritization
@@ -232,7 +232,11 @@ Layer 4: Transport Layer (mesh datagram structuring, includes logical functions 
 
 ### L5 Session layer (datapackages) - FIXME
 
-Layer 5: Session Layer (decision of transport layer: BLE, LoRa, WLAN..)
+Layer 5, Session layer, determines wether the datapackage is intended for local transport (i. e. parameters for the node trough Bluetooth), or for external transport (i. e. LoRa mesh, or WLAN). Tihs is done by determining the type of the datapackege.
+
+Main functions of L5:
+
+* FIXME
 
 ### L6 Presentation layer (encrypted data)
 
