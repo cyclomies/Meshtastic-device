@@ -145,7 +145,7 @@ Parameters for data link layer:
 * NodeID of 0xffffffff (NodeNum_BROADCAST) is used for broadcasting.
 * To prevent collisions, all transmitters will listen before attempting to send. If they hear some other node transmitting, they will reattempt transmission in x milliseconds. This retransmission delay is random between FIXME and FIXME (these two numbers are currently hardwired, but really should be scaled based on expected packet transmission time at current channel settings).
 
-### L3 Networking layer (packets)
+### L3 Networking layer (packets) - FIXME
 
 Layer 3, networking layer, does route packets according to logical addressing, and a pre-defined routing logic. Routing allow transmissions between different physical, and virtualized, network structures: between devices wich can't reach to each other directly (within L1 and L2).
 
