@@ -26,19 +26,6 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 
 *“The original multicast design i.e. RFC 1112, supports both the ASM (any-source-multicast) based on many-to-many service model and the SSM (source specific multicast) based on a one-to-many model.”*
 
-**Physical networking** - FIXME
-* **Airtime** Airtime indicates the time it takes for a transceiver to transmit a single packet (usually less is better). An example of LoRa Airtime calculation can be found here: https://github.com/sudomesh/disaster-radio/wiki/Protocol#lora-airtime 
-* **Hops** Describes the amount of retransmissions between devices.
-* **RF Air Quality** Radio Frequency Air Quality describes physical circumstances for radio waves.
-* **RX** is the abbreviation for Transmit
-* **RS** is the abbreviation for Receive
-* **LoRa SF** is the spreading factor (between 6-12). Each step up in spreading factor doubles the time on air to transmit a symbol, and each unit increase in SF correlates to about 2.5dB extra link budget. Higher spreading factors are more resistant to local noise effects, and will be read more reliably at the cost of higher battery drain, lower data rate and more congestion. *The measurement shows that it takes approximately 25 times longer and 25 times more energy to transmit in SF12 compared to SF7.* (TABLE 1, https://www.thethingsnetwork.org/article/how-spreading-factor-affects-lorawan-device-battery-life)
-* **LoRa BW** is the Bandwidth. Higher bandwidth has higher data rates and is more power-efficient, but has more congestion and less range.
-* **LoRa HD** is a header bit, 0 for implicit header, 1 for explicit header - FIXME
-* **LoRa DR** is a bit for low data optimization: 1 when enabled, 0 when disabled - FIXME
-* **LoRa CR** is the coding rate (1 corresponding to 4/5 and 4 to 4/8)
-* **LoRa Link Budget** This is how many decibels (dBs) can be lost, between the transmit PA and the receiver interface (IF). Higher link budgets translate to longer distances: 6dB = twice distance.
-
 **Logical networking functions**
 
 * **Flooding** In flooding, the node sends the packet to all nodes, because it doesn’t know how to reach the defined (unicast or multicast, or it might be a broadcast address) destination.
@@ -57,6 +44,19 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 * Addressing: Unicast if one-to-one, Multicast if one-to-many, and Broadcast if one-to-all
 * Routing: Use flooding, if no routes are present, the recipient is unknown/unseen, and for broadcasting/re-broadcasting. Execute routing according to route tables only (with distributed algorithm), if the node knows the route to the destination.
 * ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required). ACK's should always be registered, and clearly presented, individually for every intended recipient. ACK's loose their credibility, if the user can not be sure of received acknowledgements.
+
+**Physical networking** - FIXME
+* **Airtime** Airtime indicates the time it takes for a transceiver to transmit a single packet (usually less is better). An example of LoRa Airtime calculation can be found here: https://github.com/sudomesh/disaster-radio/wiki/Protocol#lora-airtime 
+* **Hops** Describes the amount of retransmissions between devices.
+* **RF Air Quality** Radio Frequency Air Quality describes physical circumstances for radio waves.
+* **RX** is the abbreviation for Transmit
+* **RS** is the abbreviation for Receive
+* **LoRa SF** is the spreading factor (between 6-12). Each step up in spreading factor doubles the time on air to transmit a symbol, and each unit increase in SF correlates to about 2.5dB extra link budget. Higher spreading factors are more resistant to local noise effects, and will be read more reliably at the cost of higher battery drain, lower data rate and more congestion. *The measurement shows that it takes approximately 25 times longer and 25 times more energy to transmit in SF12 compared to SF7.* (TABLE 1, https://www.thethingsnetwork.org/article/how-spreading-factor-affects-lorawan-device-battery-life)
+* **LoRa BW** is the Bandwidth. Higher bandwidth has higher data rates and is more power-efficient, but has more congestion and less range.
+* **LoRa HD** is a header bit, 0 for implicit header, 1 for explicit header - FIXME
+* **LoRa DR** is a bit for low data optimization: 1 when enabled, 0 when disabled - FIXME
+* **LoRa CR** is the coding rate (1 corresponding to 4/5 and 4 to 4/8)
+* **LoRa Link Budget** This is how many decibels (dBs) can be lost, between the transmit PA and the receiver interface (IF). Higher link budgets translate to longer distances: 6dB = twice distance.
 
 **Other** - FIXME
 
