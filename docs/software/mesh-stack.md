@@ -3,7 +3,11 @@
 **TODO** 
 * Merge available information of current status
 * Merge notes for future development
+* Merge information of important settings, features, parameters and configurations (what are the effects)
+* Merge information of important restrictions and regulations (what are the effects)
 * Split the protocol stack (fundamentals), and Meshtastic mesh routing protocol (L3, logical 	implementation), to two different files?
+* Categorize the terms in Terminology
+* Split Terminology to two files, and leave only the most inmportant ones here?
 * Fix FIXME
 
 ## Protocol stack explained
