@@ -169,7 +169,7 @@ Parameters for data link layer:
 
 Layer 3, networking layer, does route packets according to logical addressing, and a pre-defined routing logic. Routing allow transmissions between different physical, and virtualized, network structures: between devices wich can't reach to each other directly (within L1 and L2).
 
-Current algorithm: The routing protocol for Meshtastic is really quite simple (and suboptimal). It is heavily influenced by the mesh routing algorithm used in [Radiohead](https://www.airspayce.com/mikem/arduino/RadioHead/) (which was used in very early versions of this project).
+As L3 is responsible for managing of the logical network topology. Logical topology refers to how the data moves through the network: *Who is communicating with between each other*, not *How the communication is made*. Logical topology refers to the pattern of the data flow within a network.
 
 Main functions of L3:
 
@@ -187,14 +187,32 @@ Meshtastic can route packets trough folowing networks:
 * LoRa <-> WLAN AP (under developement)
 * Bluetooth <-> Bluetooth (under developement)
 
-#### Meshtastic mesh protocol
+#### Meshtastic Mesh Protocol
+
+The *Meshtastic Mesh Protocol* (later *protocol* or *L3*) is currently developed mainly to be used only with LoRa. However, in theory, the protocol can later be universalized. This would allow Meshtastic to generate mesh networks trough almost any interface (L1) and physical medium.
+
+Current algorithm: The routing protocol for Meshtastic is really quite simple (and suboptimal). It is heavily influenced by the mesh routing algorithm used in [Radiohead](https://www.airspayce.com/mikem/arduino/RadioHead/) (which was used in very early versions of this project).
+
+The protocol implementation is currently utilizing naive flooding, with some optimizations. 
 
 **Flooding protocol**
 
+* Supports unicast and broadcast addressing for transmit
+* Includes multiple hop forwarding logic
+* Current imlementation loosly resembles of UDP traffic
+* In future, flooding should be used mainly for transmitting broadcast addressed packets, and if there are no known routes to be used with the routing protocol
 * FIXME
 
 **Routing protocol**
 
+* Under developement
+* Should minimize transport times (i. e. airtime) by: avoiding flooding, avoidinkg unnecessary transmits and re-transmits
+* Should support unicast and multicast addressing
+* Should be able to automatically learn and maintain the logical mesh networking layout/structure
+* Should be able to automatically heal the logical mesh network
+* Could support routing trough different L1 layer types (universalized mesh routing protocol)
+* Could support routing trough different logical node naming schemes
+* 
 * FIXME
 
 ### L4 Transport layer (datagrams) - FIXME
