@@ -144,8 +144,7 @@ Parameters for data link layer:
 
 Layer 3, networking layer, does route packets according to logical addressing, and a pre-defined routing logic. Routing allow transmissions between different physical, and virtualized, network structures: between devices wich can't reach to each other directly (within L1 and L2).
 
-Layer 3: Network Layer (mesh datagram, the protocol for logical routing (routing tables) and addressing (user addresses))
-Host layers:
+Current algorithm: The routing protocol for Meshtastic is really quite simple (and suboptimal). It is heavily influenced by the mesh routing algorithm used in [Radiohead](https://www.airspayce.com/mikem/arduino/RadioHead/) (which was used in very early versions of this project).
 
 Main functions of L3:
 
@@ -197,12 +196,7 @@ L7 Application layer (messages, plain data)
 * user interface (UI) inputs and outputs
 
 
-
-
-
-
-
-
+-------- NOTES --------
 
 
 The OSI network stack consists of seven logical layers:
@@ -226,13 +220,7 @@ TCP/IP
 * physical (L1, raw data, LoRa modem/virtual LoRa modem)
 
 
-
 raw data <- packet <- datagram <- message
-
-
-
-
-
 
 
 plain data (L7) -> encrypted data (L6) -> transport layer determination (L5) -> transporting segments (L4) -> logical routing of packets (L3) -> physical frame adressing (L2) --> physical transmission (L1)
