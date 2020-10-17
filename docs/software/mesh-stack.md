@@ -55,7 +55,7 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 * Routing: Use flooding, if no routes are present, the recipient is unknown/unseen, and for broadcasting/re-broadcasting. Execute routing according to route tables only (with distributed algorithm), if the node knows the route to the destination.
 * ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required). ACK's should always be registered, and clearly presented, individually for every intended recipient. ACK's loose their credibility, if the user can not be sure of received acknowledgements.
 
-**Restrictions** - FIXME
+**Other** - FIXME
 
 * **Duty Cycle** 
 * **Payload** 
@@ -66,6 +66,7 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 
 ## Goals - FIXME
 
+* Self healing and automatically forming multi-hop capable mesh network
 * FIXME
 
 ## Restrictions - FIXME
