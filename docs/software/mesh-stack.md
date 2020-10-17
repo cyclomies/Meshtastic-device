@@ -20,12 +20,26 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 
 *“The original multicast design i.e. RFC 1112, supports both the ASM (any-source-multicast) based on many-to-many service model and the SSM (source specific multicast) based on a one-to-many model.”*
 
-**Networking**
+**Physical networking** - FIXME
+* **Airtime** Airtime indicates the time it takes for a transceiver to transmit a single packet (less is better). An example of LoRa Airtime calculation can be found here: https://github.com/sudomesh/disaster-radio/wiki/Protocol#lora-airtime 
+* **Hops** Describes the amount of retransmissions between devices.
+* **RF Air Quality** Radio Frequency Air Quality describes physical circumstances for radio waves.
+* **RX** abbreviation for Transmit
+* **RS** abbreviation for Receive
+* **LoRa SF* is the spreading factor (between 6-12)
+* **LoRa HD** is a header bit, 0 for implicit header, 1 for explicit header
+* **LoRa DR** is a bit for low data optimization: 1 when enabled, 0 when disabled
+* **LoRa CR** is the coding rate (1 corresponding to 4/5 and 4 to 4/8)
+
+**Logical networking functions**
 
 * **Flooding** In flooding, the node sends the packet to all nodes, because it doesn’t know how to reach the defined (unicast or multicast, or it might be a broadcast address) destination.
 * **Routing** In routing, the node sends the packet only to a specific node, according to the routing table, to be retransmitted (unicast or multicast, or it might be a specific broadcast address), for avoiding overusing airtime
+* **Repeating** Indicating forwarding a packet according to the routing logic, and the pre-set parameters
+* **Re-broadcasting** Indicating repeating a packet addresserd with a broadcast address
 
 **Acknowledgements**
+
 * **Explicit ACK** Sending a ACK message back to the orginal sender, from the intended recipient, whenever a ACK is required
 * **Implicit ACK** A node considers a packet is received by the intended node, if the sender node overhears the packet is retransmitted by the intended node
 * **NACK** Negative-acknowledgement (NAK or NACK) indicates a failed transfer.
@@ -33,9 +47,14 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 **To simplify the practice:**
 
 * Addressing: Unicast if one-to-one, Multicast if one-to-many, and Broadcast if one-to-all
-* Routing: Flood if no routes or unknown recipient, or if a broadcast (re-broadcasting); do routing (distributed algorithm) according to route tables only, if the node knows the route to the destination
-* ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required). ACK's should always be registered, and clearly presented, individually for every intended recipient. ACK's loose their credibility, if the user can not be sure of acknowledgements.
+* Routing: Use flooding, if no routes are present, the recipient is unknown/unseen, and for broadcasting/re-broadcasting. Execute routing according to route tables only (with distributed algorithm), if the node knows the route to the destination.
+* ACK’s: use implicit ACK’s whenever possible (i.e. while routing) to avoid overusing airtime, and send explicit ACK’s only from intended recipients (if ACK’s are required). ACK's should always be registered, and clearly presented, individually for every intended recipient. ACK's loose their credibility, if the user can not be sure of received acknowledgements.
 
+**Restrictions** - FIXME
+
+* **Duty Cycle** 
+* **Payload** 
+* **ttl** The "time to live", i.e. the number of hops/time allowed before a packet is discarded
 
 ## The layers of Meshtastic mesh network
 
