@@ -284,6 +284,9 @@ raw data <- packet <- datagram <- message
 
 plain data (L7) -> encrypted data (L6) -> transport layer determination (L5) -> transporting segments (L4) -> logical routing of packets (L3) -> physical frame adressing (L2) --> physical transmission (L1)
 
+superframes (10ms): https://www.awiatech.com/an-overview-of-wirelesshart%E2%80%99s-osi-layers/
+
+LoRa settings: https://medium.com/home-wireless/testing-lora-radios-with-the-limesdr-mini-part-2-37fa481217ff
 
 ## Current algorithm
 
