@@ -26,7 +26,7 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 *“The original multicast design i.e. RFC 1112, supports both the ASM (any-source-multicast) based on many-to-many service model and the SSM (source specific multicast) based on a one-to-many model.”*
 
 **Physical networking** - FIXME
-* **Airtime** Airtime indicates the time it takes for a transceiver to transmit a single packet (less is better). An example of LoRa Airtime calculation can be found here: https://github.com/sudomesh/disaster-radio/wiki/Protocol#lora-airtime 
+* **Airtime** Airtime indicates the time it takes for a transceiver to transmit a single packet (usually less is better). An example of LoRa Airtime calculation can be found here: https://github.com/sudomesh/disaster-radio/wiki/Protocol#lora-airtime 
 * **Hops** Describes the amount of retransmissions between devices.
 * **RF Air Quality** Radio Frequency Air Quality describes physical circumstances for radio waves.
 * **RX** is the abbreviation for Transmit
