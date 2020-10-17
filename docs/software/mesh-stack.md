@@ -3,6 +3,7 @@
 **TODO** 
 * Merge available information of current status
 * Merge notes for future development
+* Split the protocol stack (fundamentals), and Meshtastic mesh routing protocol (L3, logical 	implementation), to two different files?
 * Fix FIXME
 
 ## Protocol stack explained
