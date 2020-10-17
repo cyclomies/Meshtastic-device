@@ -64,6 +64,18 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 * **Datagram** 
 * **TTL** The "time to live", i.e. the number of hops/time allowed before a packet is discarded
 
+## Goals - FIXME
+
+* FIXME
+
+## Restrictions - FIXME
+
+* FIXME 
+
+## Assumptions - FIXME
+
+* FIXME
+
 ## The layers of Meshtastic mesh network
 
 Utilizing the OSI model, the Meshtastic mesh operations are divided to seven different layers (L1-L7). These layers should be held separated within the codebase, to be able to modify/update functions on one layer, without bricking functions of the other layers.
