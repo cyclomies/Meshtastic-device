@@ -32,10 +32,12 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 * **RF Air Quality** Radio Frequency Air Quality describes physical circumstances for radio waves.
 * **RX** is the abbreviation for Transmit
 * **RS** is the abbreviation for Receive
-* **LoRa SF** is the spreading factor (between 6-12)
+* **LoRa SF** is the spreading factor (between 6-12). Each step up in spreading factor doubles the time on air to transmit a symbol, and each unit increase in SF correlates to about 2.5dB extra link budget. Higher spreading factors are more resistant to local noise effects, and will be read more reliably at the cost of higher battery drain, lower data rate and more congestion. *The measurement shows that it takes approximately 25 times longer and 25 times more energy to transmit in SF12 compared to SF7.* (TABLE 1, https://www.thethingsnetwork.org/article/how-spreading-factor-affects-lorawan-device-battery-life)
+* **LoRa BW** is the Bandwidth. Higher bandwidth has higher data rates and is more power-efficient, but has more congestion and less range.
 * **LoRa HD** is a header bit, 0 for implicit header, 1 for explicit header - FIXME
 * **LoRa DR** is a bit for low data optimization: 1 when enabled, 0 when disabled - FIXME
 * **LoRa CR** is the coding rate (1 corresponding to 4/5 and 4 to 4/8)
+* **LoRa Link Budget** This is how many decibels (dBs) can be lost, between the transmit PA and the receiver interface (IF). Higher link budgets translate to longer distances: 6dB = twice distance.
 
 **Logical networking functions**
 
