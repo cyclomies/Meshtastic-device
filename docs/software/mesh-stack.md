@@ -167,6 +167,16 @@ Meshtastic can route packets trough folowing networks:
 * LoRa <-> WLAN AP (under developement)
 * Bluetooth <-> Bluetooth (under developement)
 
+#### Meshtastic mesh protocol
+
+**Flooding protocol**
+
+* FIXME
+
+**Routing protocol**
+
+* FIXME
+
 ### L4 Transport layer (datagrams) - FIXME
 
 Layer 4: Transport Layer (mesh datagram structuring, includes logical functions for ACK, NACK, error detection, merging and dividing datagrams, datagram retransmission, datagram queuing, datagram prioritization, datagram transmission limitations, and for duty cycle management)
