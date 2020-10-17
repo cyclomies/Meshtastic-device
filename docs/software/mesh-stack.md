@@ -24,11 +24,11 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 * **Airtime** Airtime indicates the time it takes for a transceiver to transmit a single packet (less is better). An example of LoRa Airtime calculation can be found here: https://github.com/sudomesh/disaster-radio/wiki/Protocol#lora-airtime 
 * **Hops** Describes the amount of retransmissions between devices.
 * **RF Air Quality** Radio Frequency Air Quality describes physical circumstances for radio waves.
-* **RX** abbreviation for Transmit
-* **RS** abbreviation for Receive
-* **LoRa SF* is the spreading factor (between 6-12)
-* **LoRa HD** is a header bit, 0 for implicit header, 1 for explicit header
-* **LoRa DR** is a bit for low data optimization: 1 when enabled, 0 when disabled
+* **RX** is the abbreviation for Transmit
+* **RS** is the abbreviation for Receive
+* **LoRa SF** is the spreading factor (between 6-12)
+* **LoRa HD** is a header bit, 0 for implicit header, 1 for explicit header - FIXME
+* **LoRa DR** is a bit for low data optimization: 1 when enabled, 0 when disabled - FIXME
 * **LoRa CR** is the coding rate (1 corresponding to 4/5 and 4 to 4/8)
 
 **Logical networking functions**
@@ -54,7 +54,10 @@ To avoid some inconsistency, concerning the usage of terms like flooding, routin
 
 * **Duty Cycle** 
 * **Payload** 
-* **ttl** The "time to live", i.e. the number of hops/time allowed before a packet is discarded
+* **Header** 
+* **Frame** 
+* **Datagram** 
+* **TTL** The "time to live", i.e. the number of hops/time allowed before a packet is discarded
 
 ## The layers of Meshtastic mesh network
 
